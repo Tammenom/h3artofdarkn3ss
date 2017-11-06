@@ -1017,14 +1017,11 @@
         <para>Logical and of Camera mask and eventMask.</para>
       </summary>
     </member>
-<<<<<<< HEAD
     <member name="P:UnityEngine.EventSystems.PhysicsRaycaster.maxRayIntersections">
       <summary>
         <para>Max number of ray intersection allowed to be found.</para>
       </summary>
     </member>
-=======
->>>>>>> d8b84cd9f25a10d59b2d8196fdd54d7981dca275
     <member name="M:UnityEngine.EventSystems.PhysicsRaycaster.ComputeRayAndDistance(UnityEngine.EventSystems.PointerEventData,UnityEngine.Ray&amp;,System.Single&amp;)">
       <summary>
         <para>Returns a ray going from camera through the event position and the distance between the near and far clipping planes along that ray.</para>
