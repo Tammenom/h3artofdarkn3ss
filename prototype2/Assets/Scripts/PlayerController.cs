@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
     public float moveSpeed;
     public float upDownSpeed;
 
+    public bool canMove;
+
     private Animator anim;
     private Rigidbody2D playerRigidBody;
 
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour {
 
         anim = GetComponent<Animator>();
         playerRigidBody = GetComponent<Rigidbody2D>();
+        canMove = true;
 
         if (!playerExists)
         {
@@ -41,6 +44,11 @@ public class PlayerController : MonoBehaviour {
 
         PlayerMovingHorizontal = false;
         PlayerMovingVertical = false;
+
+        if (!canMove) {
+            playerRigidBody.velocity = Vector2.zero;
+            return;
+        }
 
 
         if (Input.GetAxisRaw("Horizontal")> 0.5f || Input.GetAxisRaw("Horizontal") < -0.5)
@@ -75,5 +83,6 @@ public class PlayerController : MonoBehaviour {
         anim.SetBool("PlayerVerticalMoving", PlayerMovingVertical);
         anim.SetFloat("LastMoveX", LastMove);
 
+    
     }
 }
